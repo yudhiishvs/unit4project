@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Open Gallery | Discover art at The Met</title>
+    <meta name="description" content="Find one unexpected work from The Met collection at a time. Shape what appears next with your own ban list." />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <div>
+            <p class="brand-name">OPEN GALLERY</p>
+            <p class="brand-subtitle">A little room for discovery</p>
+          </div>
+        </div>
+        <a class="collection-link" href="https://www.metmuseum.org/art/collection" target="_blank" rel="noopener noreferrer">Explore The Met <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> ONE WORK AT A TIME</p>
+            <h1 id="page-title">Art worth<br /><em>stumbling upon.</em></h1>
+            <p class="intro-copy">Take a small detour through The Met collection. Keep what surprises you, and rule out what you have seen enough of.</p>
+          </div>
+          <div class="intro-index" aria-hidden="true"><span>01</span><span class="index-line"></span><span>∞</span></div>
+        </section>
+
+        <div class="content-grid">
+          <section class="discovery-panel" aria-labelledby="discovery-heading">
+            <div class="panel-heading">
+              <div>
+                <p class="section-number">THE DISCOVERY</p>
+                <h2 id="discovery-heading">Today's find</h2>
+              </div>
+              <button class="discover-button" id="discover-button" type="button">
+                <span aria-hidden="true">✳</span> Discover a work <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+            <p class="status" id="status" role="status" aria-live="polite">Choose Discover a work to begin.</p>
+
+            <div class="empty-state" id="empty-state">
+              <div class="empty-art" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="empty-state-copy">
+                <p class="empty-kicker">A BLANK WALL, FOR NOW</p>
+                <p>Every click opens a new corner of the collection.</p>
+              </div>
+            </div>
+
+            <article class="artwork" id="current-artwork" data-testid="current-artwork" hidden>
+              <div class="art-image-wrap">
+                <img id="art-image" src="" alt="" />
+                <span class="image-corner" aria-hidden="true">THE MET COLLECTION</span>
+              </div>
+              <div class="artwork-details">
+                <p class="artist-line" id="art-artist"></p>
+                <h3 id="art-title" data-testid="artwork-title"></h3>
+                <div class="attribute-grid">
+                  <div class="attribute">
+                    <p class="attribute-label">DATE</p>
+                    <p class="attribute-value" id="art-date"></p>
+                  </div>
+                  <div class="attribute">
+                    <p class="attribute-label">DEPARTMENT <span class="tap-hint">tap to ban</span></p>
+                    <button class="attribute-button" id="art-department" type="button"></button>
+                  </div>
+                  <div class="attribute attribute-wide">
+                    <p class="attribute-label">MEDIUM <span class="tap-hint">tap to ban</span></p>
+                    <button class="attribute-button" id="art-medium" type="button"></button>
+                  </div>
+                </div>
+                <a class="art-link" id="art-link" href="#" target="_blank" rel="noopener noreferrer">View this work at The Met <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </section>
+
+          <aside class="sidebar">
+            <section class="side-card ban-card" aria-labelledby="ban-heading">
+              <div class="side-card-heading">
+                <span class="side-icon" aria-hidden="true">⊘</span>
+                <div>
+                  <p class="section-number">CURATE YOUR VIEW</p>
+                  <h2 id="ban-heading">Ban list <span id="ban-count" class="count">0</span></h2>
+                </div>
+              </div>
+              <p class="side-description">Tap a department or medium on a work to keep it out of future discoveries. Tap a ban here to remove it at once.</p>
+              <div id="ban-list" class="ban-list" aria-live="polite">
+                <p class="side-empty">No bans yet. Your gallery is wide open.</p>
+              </div>
+            </section>
+
+            <section class="side-card history-card" aria-labelledby="history-heading">
+              <div class="side-card-heading">
+                <span class="side-icon" aria-hidden="true">↶</span>
+                <div>
+                  <p class="section-number">YOUR PATH</p>
+                  <h2 id="history-heading">Previously seen</h2>
+                </div>
+              </div>
+              <p class="side-description">The works you have passed on in this tab stay here until you close it.</p>
+              <div id="history-list" data-testid="history-list" class="history-list">
+                <p class="side-empty">Your trail begins with the next discovery.</p>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <p>Art and details from <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener noreferrer">The Metropolitan Museum of Art Open Access collection</a>.</p>
+        <p>Made for curious wandering.</p>
+      </footer>
+    </div>
+  </body>
+</html>
